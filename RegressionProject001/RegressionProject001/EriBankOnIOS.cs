@@ -26,6 +26,10 @@ namespace Experitest
         {
             string str0 = client.WaitForDevice("@os='ios'", 300000);
             client.Launch("com.experitest.ExperiBank", true, true);
+            if (client.WaitForElement("NATIVE", "xpath=//*[@text='Login']", 0, 30000))
+            {
+                // If statement
+            }
             client.ElementSendText("NATIVE", "placeholder=Username", 0, "company");
             client.ElementSendText("NATIVE", "placeholder=Password", 0, "company");
             client.Click("NATIVE", "accessibilityLabel=loginButton", 0, 1);

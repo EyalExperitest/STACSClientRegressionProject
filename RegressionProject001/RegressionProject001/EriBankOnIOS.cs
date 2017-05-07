@@ -12,14 +12,12 @@ namespace Experitest
     {
         private string host = "localhost";
         private int port = 8889;
-        private string projectBaseDirectory = "C:\\Users\\eyal.neumann\\workspace\\GridProject";
         protected Client client = null;
 
         [TestInitialize()]
         public void SetupTest()
         {
             client = new Client(host, port, true);
-            client.SetProjectBaseDirectory(projectBaseDirectory);
             client.SetReporter("xml", "reports", "EriBankOnIOS");
         }
 
